@@ -1,53 +1,58 @@
 package com.project.bookstore.entities;
 
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Book")
+@Table(name="book")
 public class Book {
 
 	@Id
-	@Column(name = "isbn")
-	private String id;
-
-	@Column(name = "year")
-	private int year;
-
-	@Column(name = "title")
+	@GeneratedValue(strategy =GenerationType.IDENTITY )
+	private int id;
+	
 	private String title;
-
-	@Column(name = "price")
+	
+	private String ISBN;
+	
 	private int price;
-
-	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH}, fetch = FetchType.EAGER)
-	@JoinColumns({ @JoinColumn(name = "authorname",referencedColumnName = "name"), @JoinColumn(name = "authoraddress",referencedColumnName = "address") })
+	
+	
+	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinColumn(name="author_id")
 	private Author author;
+	
+	
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@JoinColumn(name="publisher_id")
+	private Publisher publisher;
+	
+	
+
+	public Book(String title, String iSBN, int price) {
+		this.title = title;
+		ISBN = iSBN;
+		this.price = price;
+	}
+	
 
 	public Book() {
 	}
 
-	public Book(String id, int year, String title, int price) {
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
 		this.id = id;
-		this.year = year;
-		this.title = title;
-		this.price = price;
-	}
-
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
 	}
 
 	public String getTitle() {
@@ -58,21 +63,20 @@ public class Book {
 		this.title = title;
 	}
 
+	public String getISBN() {
+		return ISBN;
+	}
+
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+
 	public int getPrice() {
 		return price;
 	}
 
 	public void setPrice(int price) {
 		this.price = price;
-	}
-	
-	
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public Author getAuthor() {
@@ -82,13 +86,26 @@ public class Book {
 	public void setAuthor(Author author) {
 		this.author = author;
 	}
+	
+	
+
+
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", year=" + year + ", title=" + title + ", price=" + price + ", author=" + author
-				+ "]";
+		return "Book [id=" + id + ", title=" + title + ", ISBN=" + ISBN + ", price=" + price + "]";
 	}
-
 	
-
+	
+	
+	
 }

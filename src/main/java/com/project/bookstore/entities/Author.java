@@ -1,41 +1,58 @@
 package com.project.bookstore.entities;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@IdClass(value=AuthorId.class)
 @Table(name = "author")
 public class Author {
-
+	
 	@Id
-	@Column(name = "name")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
 	private String name;
 	
-	@Id
-	@Column(name = "address")
 	private String address;
-
-	@Column(name = "url")
-	private String url;
 	
-	@OneToMany(mappedBy = "author")
+	private String date_prepare;
+	
+	private String date_add;
+	
+	private String name_update;
+	
+	@OneToMany(mappedBy = "author", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	private List<Book> books;
-
+	
 	public Author() {
-
+		
 	}
 
-	public Author(String name, String address, String url) {
+	public Author(String name, String address, String date_prepare, String date_add, String name_update) {
 		this.name = name;
 		this.address = address;
-		this.url = url;
+		this.date_prepare = date_prepare;
+		this.date_add = date_add;
+		this.name_update = name_update;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -54,17 +71,44 @@ public class Author {
 		this.address = address;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getDate_prepare() {
+		return date_prepare;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setDate_prepare(String date_prepare) {
+		this.date_prepare = date_prepare;
+	}
+
+	public String getDate_add() {
+		return date_add;
+	}
+
+	public void setDate_add(String date_add) {
+		this.date_add = date_add;
+	}
+
+	public String getName_update() {
+		return name_update;
+	}
+
+	public void setName_update(String name_update) {
+		this.name_update = name_update;
 	}
 
 	@Override
 	public String toString() {
-		return "Author [name=" + name + ", address=" + address + ", url=" + url + "]";
+		return "Author [id=" + id + ", name=" + name + ", address=" + address + ", date_prepare=" + date_prepare
+				+ ", date_add=" + date_add + ", name_update=" + name_update + "]";
 	}
-
+	
+	public void addBook(Book theBook) {
+		if(books == null) {
+			books = new ArrayList<Book>();
+		}
+		books.add(theBook);
+		
+		theBook.setAuthor(this);
+	}
+	
+	
 }

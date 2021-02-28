@@ -4,18 +4,15 @@ import java.util.List;
 
 import com.project.bookstore.entities.Book;
 
+
+
 public interface BookService {
+public List<Book> showAllBook();
 	
-	public List<Book> showAllBook();
+	public void deleteBookById(int id);
 	
-	public void deleteBookById(String id);
+	public void addOrUpdateBook(Book book);
 	
-	public void saveBook(Book book);
-	
-	public Book showBookById(String id);
-	
-	public void updateBook(Book book);
-		
-	
+	public Book findBookById(int id);
 	
 }

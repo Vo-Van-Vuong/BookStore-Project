@@ -1,6 +1,7 @@
 package com.project.bookstore.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,40 +15,34 @@ public class BookServiceImpl implements BookService {
 	
 	@Autowired
 	BookRepository bookRepository;
-	
+
 	@Override
 	@Transactional
 	public List<Book> showAllBook() {
-		List<Book> list = bookRepository.showAllBook();
+		List<Book> list = bookRepository.findAll();
 		return list;
 	}
 
 	@Override
 	@Transactional
-	public void deleteBookById(String id) {
-		bookRepository.deleteBookByISBN(id);
+	public void deleteBookById(int id) {
+		bookRepository.deleteById(id);
 
 	}
 
 	@Override
 	@Transactional
-	public void saveBook(Book book) {
+	public void addOrUpdateBook(Book book) {
 		bookRepository.save(book);
 
 	}
 
 	@Override
 	@Transactional
-	public Book showBookById(String id) {
-		Book book = bookRepository.showBookById(id);
+	public Book findBookById(int id) {
+		Optional<Book> temp = bookRepository.findById(id);
+		Book book = temp.get();
 		return book;
-	}
-
-	@Override
-	@Transactional
-	public void updateBook(Book book) {
-		bookRepository.save(book);
-		
 	}
 
 }
