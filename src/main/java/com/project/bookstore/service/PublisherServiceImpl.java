@@ -19,8 +19,8 @@ public class PublisherServiceImpl implements PublisherService {
 	@Override
 	@Transactional
 	public List<Publisher> showAllPublisher() {
-		
-		return publisherRepository.findAll();
+		List<Publisher> list = publisherRepository.findAll();
+		return list;
 	}
 
 	@Override

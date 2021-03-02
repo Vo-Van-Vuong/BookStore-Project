@@ -1,7 +1,10 @@
 package com.project.bookstore.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -11,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
-public class Book {
+public class Book implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
@@ -24,28 +27,26 @@ public class Book {
 	private int price;
 	
 	
-	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
+		fetch = FetchType.LAZY)
 	@JoinColumn(name="author_id")
 	private Author author;
 	
-	
-	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
+			fetch = FetchType.LAZY)
 	@JoinColumn(name="publisher_id")
 	private Publisher publisher;
-	
-	
 
+	
 	public Book(String title, String iSBN, int price) {
 		this.title = title;
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 		this.price = price;
 	}
 	
 
 	public Book() {
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -68,7 +69,7 @@ public class Book {
 	}
 
 	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 	}
 
 	public int getPrice() {
@@ -88,8 +89,6 @@ public class Book {
 	}
 	
 	
-
-
 	public Publisher getPublisher() {
 		return publisher;
 	}

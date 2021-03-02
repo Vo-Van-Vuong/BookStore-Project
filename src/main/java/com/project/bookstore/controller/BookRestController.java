@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.bookstore.entities.Book;
@@ -24,7 +25,6 @@ public class BookRestController {
 
 	@GetMapping("/books")
 	public List<Book> showAllBook() {
-
 		return bookService.showAllBook();
 	}
 
@@ -42,15 +42,32 @@ public class BookRestController {
 		return book;
 	}
 
-	@GetMapping("/books/{booksId}")
+	@GetMapping("/books/{bookId}")
 	public Book showBookById(@PathVariable int bookId) {
 		Book tempBook = bookService.findBookById(bookId);
 		return tempBook;
 	}
 
 	@DeleteMapping("/books/{bookId}")
-	public String deleteAuthorById(@PathVariable int bookId) {
+	public String deleteBookById(@PathVariable int bookId) {
 		bookService.deleteBookById(bookId);
-		return "Delete " + bookId;
+		return "Dele	te " + bookId;
 	}
+	
+	@GetMapping("/books/")
+	public List<Book> findAllBookInPrice(@RequestParam("price") int price){
+		return bookService.findAllInPrice(price);
+	}
+	
+	@GetMapping("/books1/")
+	public List<Book> findBookByISBN(@RequestParam("isbn") String isbn) {
+		return bookService.findBookByISBN(isbn);
+	}
+	
+	@GetMapping("/books2/")
+	public List<Object> findAuthorAndPriceByPrice(@RequestParam("min") int min,@RequestParam("max") int max){
+		return bookService.findAuthorAndPriceByPrice(min, max);
+	}
+	
+	
 }
