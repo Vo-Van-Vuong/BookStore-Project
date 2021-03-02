@@ -1,0 +1,22 @@
+.top-banner {
+  width: 100%;
+  padding: 5px;
+  height: fit-content;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.my-drop {
+  float: left;
+  margin-right: 5px;
+}
+
+.my-button {
+  margin-right: 5px;
+}
+
+.my-cart {
+  float: right;
+}

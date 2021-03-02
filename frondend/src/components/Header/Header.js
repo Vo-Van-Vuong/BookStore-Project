@@ -25,27 +25,15 @@ export default class Header extends Component {
               <Nav.Link className="links" href="">
                 Link
               </Nav.Link>
-              <NavDropdown title="<p>df</p>" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
+              
             </Nav>
             <Form inline>
               <FormControl
                 type="text"
-                placeholder="Search"
+                placeholder="Tìm sách ở đây..."
                 className="mr-sm-2"
               />
-              <Button variant="success">Search</Button>
+              <Button variant="success"> <i className="fa fa-search mr-1"></i>Tìm kiếm</Button>
             </Form>
           </Navbar.Collapse>
         </Navbar>
