@@ -1,17 +1,36 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 import "./ProductList.css";
 import Book from "../../public/images/products/october-2020-books-leave-the-world-behind.jpg";
 import Book1 from "../../public/images/products/book-of-knowledge.jpg";
 import Book2 from "../../public/images/products/Joy_of_Intimacy.jpg";
 import Book3 from "../../public/images/products/201912-the-return-thumbnail.png";
-import New from "../../public/images/New.png";
-import Hot from "../../public/images/hot.jpg";
 
 export default class PodcutList extends Component {
+  responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 4,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 1020 },
+      items: 3,
+    },
+    mobile: {
+      breakpoint: { max: 1020, min: 0 },
+      items: 2,
+    },
+  };
+
   render() {
     return (
       <div className="product-grid">
@@ -22,9 +41,9 @@ export default class PodcutList extends Component {
             </h4>
           </Card.Header>
           <Card.Body>
-            <Card.Text>
-              <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+          <Carousel infinite={true} slidesToSlide={2} responsive={this.responsive}>
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
                 <Card.Body>
                   <Card.Title>Leave the world behind</Card.Title>
                   <Card.Text>
@@ -34,8 +53,30 @@ export default class PodcutList extends Component {
                 </Card.Body>
               </Card>
 
-              <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book1} />
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Body>
+                  <Card.Title>Leave the world behind</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Body>
+                  <Card.Title>Leave the world behind</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book1} />
                 <Card.Body>
                   <Card.Title>The Book of knowledge</Card.Title>
                   <Card.Text>
@@ -45,8 +86,8 @@ export default class PodcutList extends Component {
                 </Card.Body>
               </Card>
 
-              <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book2} />
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book2} />
                 <Card.Body>
                   <Card.Title>The JOY of Intimacy</Card.Title>
                   <Card.Text>
@@ -56,8 +97,8 @@ export default class PodcutList extends Component {
                 </Card.Body>
               </Card>
 
-              <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book3} />
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book3} />
                 <Card.Body>
                   <Card.Title>The Return</Card.Title>
                   <Card.Text>
@@ -66,9 +107,7 @@ export default class PodcutList extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
-            </Card.Text>
-
-            <Card.Link className="card-link" href="/home">Xem thêm</Card.Link>
+            </Carousel>
           </Card.Body>
         </Card>
 
@@ -80,49 +119,73 @@ export default class PodcutList extends Component {
             </h4>
           </Card.Header>
           <Card.Body>
-            <Card className="product-card">
-              <Card.Img className="card-img" variant="top" src={Book} />
-              <Card.Body>
-                <Card.Title>Leave the world behind</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <Carousel infinite={true} slidesToSlide={2} responsive={this.responsive}>
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Body>
+                  <Card.Title>Leave the world behind</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
 
-            <Card className="product-card">
-              <Card.Img className="card-img" variant="top" src={Book1} />
-              <Card.Body>
-                <Card.Title>The Book of knowledge</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Body>
+                  <Card.Title>Leave the world behind</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
 
-            <Card className="product-card">
-              <Card.Img className="card-img" variant="top" src={Book2} />
-              <Card.Body>
-                <Card.Title>The JOY of Intimacy</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Body>
+                  <Card.Title>Leave the world behind</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
 
-            <Card className="product-card">
-              <Card.Img className="card-img" variant="top" src={Book3} />
-              <Card.Body>
-                <Card.Title>The Return</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book1} />
+                <Card.Body>
+                  <Card.Title>The Book of knowledge</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book2} />
+                <Card.Body>
+                  <Card.Title>The JOY of Intimacy</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+
+              <Card className="product-card1">
+                <Card.Img className="card-img1" variant="top" src={Book3} />
+                <Card.Body>
+                  <Card.Title>The Return</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Carousel>
           </Card.Body>
         </Card>
       </div>

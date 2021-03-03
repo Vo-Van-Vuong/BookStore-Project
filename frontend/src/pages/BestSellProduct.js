@@ -6,7 +6,7 @@ import Footer from '../components/Footer/Footer';
 import SideMenu from '../components/SideMenu/SideMenu';
 import ProdcutGrid from "../components/ProductGrid/ProdcutGrid";
 
-export default class ProductPage extends Component {
+export default class BestSellProduct extends Component {
   render() {
     return (
       <div className="App">

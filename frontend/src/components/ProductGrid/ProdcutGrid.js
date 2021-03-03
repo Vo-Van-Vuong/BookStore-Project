@@ -17,7 +17,7 @@ export default class ProdcutGrid extends Component {
       <div>
         <Card className="card-container">
           <Card.Header className="card-header">
-            <h4>Sách bán chạy</h4>
+            <h4><Badge className="mr-2" variant="danger">HOT !!!</Badge>Sách bán chạy</h4>
           </Card.Header>
           <Card.Body>
             <Card.Text>
