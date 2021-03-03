@@ -1,0 +1,18 @@
+.my-navbar {
+  background-image: url("../../public/images/navbar.jfif") !important;
+  color: #ffffff !important;
+  border-radius: 8px;
+}
+
+h1 {
+  color: honeydew;
+  font-weight: bold;
+}
+.links {
+  color: honeydew !important;
+  font-size: 20px;
+  font-weight: bold;
+}
+.links:hover {
+  text-decoration: underline;
+}

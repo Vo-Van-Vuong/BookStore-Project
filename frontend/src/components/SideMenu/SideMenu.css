@@ -1,0 +1,8 @@
+.items {
+  font-size: 15px;
+}
+
+.items:hover {
+  background-color: #0069d9;
+  color: white;
+}
