@@ -10,6 +10,7 @@ import Book1 from "../../public/images/products/book-of-knowledge.jpg";
 import Book2 from "../../public/images/products/Joy_of_Intimacy.jpg";
 import Book3 from "../../public/images/products/201912-the-return-thumbnail.png";
 
+
 export default class PodcutList extends Component {
   responsive = {
     superLargeDesktop: {
@@ -34,7 +35,8 @@ export default class PodcutList extends Component {
   render() {
     return (
       <div className="product-grid">
-        <Card>
+      
+        <Card className="new-card">
           <Card.Header className="card-header">
             <h4>
               <Badge variant="warning">NEW !!!</Badge> Sách mới mỗi ngày
@@ -188,6 +190,8 @@ export default class PodcutList extends Component {
             </Carousel>
           </Card.Body>
         </Card>
+
+        
       </div>
     );
   }

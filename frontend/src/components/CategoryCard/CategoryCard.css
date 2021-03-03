@@ -1,0 +1,29 @@
+.row2 {
+  margin-top: 10px;
+  margin-left: 0px;
+  padding-left: 10px;
+}
+.category-card {
+  margin-right: 10px;
+}
+.child {
+  background-image: url("../../public/images/child.jpg") !important;
+  background-size: contain;
+}
+.cook {
+  background-image: url("../../public/images/cook.jpg");
+  background-size: cover;
+}
+.manga {
+  background-image: url("../../public/images/manga.jfif");
+  background-size: cover;
+}
+.my-card {
+  transition: all ease 200ms;
+
+  margin: 10px;
+}
+.my-card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
