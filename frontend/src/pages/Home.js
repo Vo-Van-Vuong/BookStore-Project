@@ -28,7 +28,7 @@ export default class Home extends Component {
         <div className="feed-back">
           <Card>
             <Card.Body>
-              <Form>
+              <Form method="post">
                 <Form.Row>
                   <Col md={1}>
                     <img src={Letter} />
@@ -37,7 +37,7 @@ export default class Home extends Component {
                     <h6>Hãy để lại góp ý cho chúng tôi. Những góp ý của các bạn sẽ góp phần nâng cao chất lượng phục vụ của chúng tôi.</h6>
                   </Col>
                   <Col md={7}>
-                    <Form.Control style={{height:"100%"}} as="textarea" placeholder="Your message" />
+                    <Form.Control name="message" style={{height:"100%"}} as="textarea" placeholder="Góp ý của bạn..." />
                   </Col>
                   <Col md={1}>
                     <Button type="submit">Gửi</Button>
