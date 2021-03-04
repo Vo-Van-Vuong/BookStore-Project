@@ -6,13 +6,16 @@
 
 h1 {
   color: honeydew;
-  font-weight: bold;
 }
 .links {
   color: honeydew !important;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 3px;
+  font-weight: 600;
 }
 .links:hover {
-  text-decoration: underline;
+  background-color: #898989;
+  border-radius: 10px;
 }
