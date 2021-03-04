@@ -1,11 +1,18 @@
 import React, { Component } from "react";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer'
-import ProdcutList from '../components/ProductList/PodcutList';
-import Banner from '../components/Banner/Banner';
-import TopBanner from '../components/Banner/TopBanner';
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import ProdcutList from "../components/ProductList/PodcutList";
+import Banner from "../components/Banner/Banner";
+import TopBanner from "../components/Banner/TopBanner";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
+
+import Letter from '../public/images/newsletter-icon.svg'
+import "../App.css";
 
 export default class Home extends Component {
   render() {
@@ -17,6 +24,28 @@ export default class Home extends Component {
           <Banner />
           <ProdcutList />
           <CategoryCard />
+        </div>
+        <div className="feed-back">
+          <Card>
+            <Card.Body>
+              <Form>
+                <Form.Row>
+                  <Col md={1}>
+                    <img src={Letter} />
+                  </Col>
+                  <Col md={3}>
+                    <h6>Hãy để lại góp ý cho chúng tôi. Những góp ý của các bạn sẽ góp phần nâng cao chất lượng phục vụ của chúng tôi.</h6>
+                  </Col>
+                  <Col md={7}>
+                    <Form.Control style={{height:"100%"}} as="textarea" placeholder="Your message" />
+                  </Col>
+                  <Col md={1}>
+                    <Button type="submit">Gửi</Button>
+                  </Col>
+                </Form.Row>
+              </Form>
+            </Card.Body>
+          </Card>
         </div>
         <Footer />
       </div>

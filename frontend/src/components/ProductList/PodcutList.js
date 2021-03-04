@@ -43,7 +43,7 @@ export default class PodcutList extends Component {
             </h4>
           </Card.Header>
           <Card.Body>
-          <Carousel infinite={true} slidesToSlide={2} responsive={this.responsive}>
+            <Carousel infinite={true} slidesToSlide={2} responsive={this.responsive}>
               <Card className="product-card1">
                 <Card.Img className="card-img1" variant="top" src={Book} />
                 <Card.Body>

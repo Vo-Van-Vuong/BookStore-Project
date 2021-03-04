@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
-import PruductPage from './pages/BestSellProduct';
+import LoginPage from './pages/LoginPage';
 import AdminHome from './pages/admin/AdminHome';
 import BestSellProduct from './pages/BestSellProduct';
 
@@ -16,6 +16,7 @@ function App() {
     <Route path={["/", "/home"]} exact component={Home} />
     <Route path="/product-page" exact component={BestSellProduct} />
     <Route path="/admin-home" exact component={AdminHome} />
+    <Route path="/login" exact component={LoginPage} />
   </Router>
 
   );

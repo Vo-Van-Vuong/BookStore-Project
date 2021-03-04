@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import Dropdown from "react-bootstrap/Dropdown";
 
-import BookeBanner from "../../public/images/bookbanner.jpg";
-import SaleOff from "../../public/images/sale.png";
+
+import BookeBanner1 from "../../public/images/carousel1.jpg";
+import BookeBanner2 from "../../public/images/carousel3.jpg";
+import BookeBanner3 from "../../public/images/carousel2.jpg";
+import LogoBanner from "../../public/images/logo-banner.jpg";
 import "./Banner.css";
 
 export default class Banner extends Component {
@@ -11,37 +13,32 @@ export default class Banner extends Component {
     return (
       <div>
         
-          <img className="my-img" src={SaleOff} />
+          <img className="my-img" src={LogoBanner} />
           
         
         <Carousel className="my-carousel">
           <Carousel.Item>
             <img
               className="d-block my-wall"
-              src={BookeBanner}
+              src={BookeBanner1}
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block my-wall"
-              src={BookeBanner}
+              src={BookeBanner2}
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block my-wall"
-              src={BookeBanner}
+              src={BookeBanner3}
               alt="Third slide"
             />
 
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
+            
           </Carousel.Item>
         </Carousel>
       </div>

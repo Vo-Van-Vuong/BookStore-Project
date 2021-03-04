@@ -4,3 +4,8 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.feed-back {
+  width: 1000px;
+  margin: auto;
+  margin-top: 25px;
+}

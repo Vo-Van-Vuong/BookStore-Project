@@ -27,7 +27,7 @@ export default class Header extends Component {
               <Nav.Link className="links" href="">
                 Liên hệ
               </Nav.Link>
-              <Nav.Link className="links ml-7" href="">
+              <Nav.Link className="links ml-7" href="/login">
               <i className="fa fa-user mr-1"></i>Đăng nhập/đăng ký
               </Nav.Link>
               
