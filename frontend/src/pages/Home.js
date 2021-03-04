@@ -40,7 +40,7 @@ export default class Home extends Component {
                     <Form.Control name="message" style={{height:"100%"}} as="textarea" placeholder="Góp ý của bạn..." />
                   </Col>
                   <Col md={1}>
-                    <Button type="submit">Gửi</Button>
+                    <Button style={{width:"100%",height:"100%"}} type="submit">Gửi</Button>
                   </Col>
                 </Form.Row>
               </Form>

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import './Footer.css';
+import "./Footer.css";
 
 export default class Footer extends Component {
   render() {
     return (
-        <footer className="footer">
+      <footer className="footer">
         <div className="footer-left col-md-4 col-sm-6">
           <p className="about">
-            <span> About the company</span> Ut congue augue non tellus bibendum,
+            <span> Mục tiêu của chúng tôi</span> Ut congue augue non tellus bibendum,
             in varius tellus condimentum. In scelerisque nibh tortor, sed
             rhoncus odio condimentum in. Sed sed est ut sapien ultrices
             eleifend. Integer tellus est, vehicula eu lectus tincidunt,
@@ -37,31 +37,32 @@ export default class Footer extends Component {
           <div>
             <i className="fa fa-map-marker" />
             <p>
-              <span> Street name and number</span> City, Country
+              <span> 123 Nguyễn Hữu Thọ</span> Hồ Chí Minh, Việt Nam
             </p>
           </div>
           <div>
             <i className="fa fa-phone" />
-            <p> (+00) 0000 000 000</p>
+            <p> (+84) 355 891 555</p>
           </div>
           <div>
             <i className="fa fa-envelope" />
             <p>
-              <a href=""> office@company.com</a>
+              <a href=""> bookstore@company.com</a>
             </p>
           </div>
         </div>
         <div className="footer-right col-md-4 col-sm-6">
-          <h2>
-            {'{'}" "{'}'}
-            Company<span> logo</span>
-          </h2>
+          <h1 style={{ display: "inline" }}>
+            <i className="fa fa-book mr-2"></i>Book
+          </h1>
+          <h4 style={{ display: "inline", color: "white" }}>store</h4>
+
           <p className="menu">
-            <a href=""> Home</a> |<a href=""> About</a> |
-            <a href=""> Services</a> |<a href=""> Portfolio</a> |
-            <a href=""> News</a> |<a href=""> Contact</a>
+            <a href=""> Trang chủ</a> |<a href=""> Về chúng tôi</a> |
+            <a href=""> Thể loại</a> |<a href=""> Nhà xuất bản</a> |
+            <a href=""> Tác giả</a> |<a href=""> Liên hệ</a>
           </p>
-          <p className="name"> Company Name © 2016</p>
+          <p className="name"> Book store © 2021</p>
         </div>
       </footer>
     );
