@@ -27,16 +27,37 @@ export default class Login extends Component {
                 <Form.Control type="password" placeholder="password..." />
               </Form.Group>
               <Form.Group controlId="formBasicCheckbox">
-                <div className="row">
-                  <Form.Check style={{marginLeft:"10px"}} className="col-md-5" type="checkbox" label="Nhớ mật khẩu" />
-                  <a style={{marginLeft:"17px"}} className="col-md-6" href="/account/forgot-pasword">
-                    Quên mật khẩu?
-                  </a>
-                </div>
+                <Form.Check type="checkbox" label="Nhớ mật khẩu" />  
               </Form.Group>
               <Form.Group>
                 <Button style={{float:"right"}} variant="primary" type="submit">
                   Đăng nhập
+                </Button>
+              </Form.Group>
+            </Form>
+          </Card.Body>
+        </Card>
+
+        <Card style={{marginTop:"15px"}}>
+          <Card.Header className="card-header">
+            <h5>
+              {" "}
+              <i className="fa fa-unlock-alt mr-2"></i>Quên mật khẩu
+            </h5>
+          </Card.Header>
+          <Card.Body>
+          <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label>Địa chỉ Email</Form.Label>
+                <Form.Control type="email" placeholder="email..." />
+              </Form.Group>
+
+              
+              
+              
+              <Form.Group>
+                <Button style={{float:"right", width:"100px"}} variant="primary" type="submit">
+                  Gửi
                 </Button>
               </Form.Group>
             </Form>

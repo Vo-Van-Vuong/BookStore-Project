@@ -7,7 +7,7 @@ export default class SignUp extends Component {
   render() {
     return (
       <div style={{marginTop:"15px"}}>
-        <Card>
+        <Card style={{height:"588px"}}>
           <Card.Header className="card-header">
             <h5><i className="fa fa-user-plus mr-2"></i>Đăng ký</h5>
           </Card.Header>
