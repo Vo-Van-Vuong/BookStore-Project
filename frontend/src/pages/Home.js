@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button"
 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import ProdcutList from "../components/ProductList/PodcutList";
+import ProdcutList from "../components/ProductList/PodcutList copy";
 import Banner from "../components/Banner/Banner";
 import TopBanner from "../components/Banner/TopBanner";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
