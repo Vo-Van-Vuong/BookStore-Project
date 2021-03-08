@@ -1,0 +1,31 @@
+.my-container {
+  padding: 20px;
+}
+
+.my-carousel {
+  width: 60%;
+  height: 300px;
+  float: left;
+  padding-left: 10px;
+}
+.my-wall {
+  border-radius: 8px;
+  width: 100%;
+  height: 400px;
+}
+
+.my-category {
+  border-radius: 8px;
+  width: 40%;
+  height: 400px;
+  padding: 20px;
+
+  float: left;
+}
+.my-img {
+  border-radius: 8px;
+  width: 40%;
+  height: 400px;
+
+  float: left;
+}

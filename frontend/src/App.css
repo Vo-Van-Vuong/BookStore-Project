@@ -1,0 +1,11 @@
+.App {
+  padding: 35px;
+  background-image: url("./public/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.feed-back {
+  width: 1000px;
+  margin: auto;
+  margin-top: 25px;
+}
