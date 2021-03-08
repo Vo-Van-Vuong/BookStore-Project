@@ -1,40 +1,32 @@
 package com.project.bookstore.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name="publisher")
-public class Publisher implements Serializable {
+public class Publisher {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Column(name="name")
 	private String name;
 	
-	@Column(name="address")
 	private String address;
 	
 	private String phone;
 	
-	@OneToMany(mappedBy = "publisher", 
-			cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
-	private List<Book> abooks;
+	@OneToMany(mappedBy = "publisher",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
+	private List<Book> books;
 
 	public Publisher(String name, String address, String phone) {
 		this.name = name;
@@ -77,26 +69,26 @@ public class Publisher implements Serializable {
 		this.phone = phone;
 	}
 
-
-
-	public List<Book> getAbooks() {
-		return abooks;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void setAbooks(List<Book> abooks) {
-		this.abooks = abooks;
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
+	
+	
 
 	@Override
 	public String toString() {
 		return "Publisher [id=" + id + ", name=" + name + ", address=" + address + ", phone=" + phone + "]";
 	}
 	
-	public void addBooks(Book theBook) {
-		if(abooks == null) {
-			abooks = new ArrayList<Book>();
+	public void addBook(Book theBook) {
+		if(books == null) {
+			books = new ArrayList<Book>();
 		}
-		abooks.add(theBook);
+		books.add(theBook);
 		theBook.setPublisher(this);
 		
 	}

@@ -19,8 +19,8 @@ public class BookServiceImpl implements BookService {
 	@Override
 	@Transactional
 	public List<Book> showAllBook() {
-		List<Book> temp = bookRepository.findAll();
-		return temp;
+		List<Book> list = bookRepository.findAllBook();
+		return list;
 	}
 
 	@Override
@@ -43,25 +43,6 @@ public class BookServiceImpl implements BookService {
 		Optional<Book> temp = bookRepository.findById(id);
 		Book book = temp.get();
 		return book;
-	}
-
-	@Override
-	@Transactional
-	public List<Book> findAllInPrice (int min) {
-		List<Book> list = bookRepository.findAllBookInPrice(min);
-		return list;
-	}
-
-	@Override
-	public List<Book> findBookByISBN(String isbn) {
-		List<Book> book = bookRepository.findBookByISBN(isbn);
-		return book;
-	}
-
-	@Override
-	public List<Object> findAuthorAndPriceByPrice(int min, int max) {
-		List<Object> object = bookRepository.findAuthorAndPriceByPrice(min, max);
-		return object;
 	}
 
 

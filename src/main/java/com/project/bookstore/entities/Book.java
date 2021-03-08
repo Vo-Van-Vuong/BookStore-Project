@@ -1,10 +1,7 @@
 package com.project.bookstore.entities;
 
-import java.io.Serializable;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="book")
-public class Book implements Serializable {
+public class Book {
 
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
@@ -26,24 +23,26 @@ public class Book implements Serializable {
 	
 	private int price;
 	
+	private String image;
 	
-	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
-		fetch = FetchType.LAZY)
+	
+	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="author_id")
 	private Author author;
 	
-	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},
-			fetch = FetchType.LAZY)
+	
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="publisher_id")
 	private Publisher publisher;
+	
+		
 
-	
-	public Book(String title, String iSBN, int price) {
+	public Book(String title, String iSBN, int price, String image) {
 		this.title = title;
-		this.ISBN = iSBN;
+		ISBN = iSBN;
 		this.price = price;
+		this.image = image;
 	}
-	
 
 	public Book() {
 	}
@@ -69,7 +68,7 @@ public class Book implements Serializable {
 	}
 
 	public void setISBN(String iSBN) {
-		this.ISBN = iSBN;
+		ISBN = iSBN;
 	}
 
 	public int getPrice() {
@@ -88,7 +87,7 @@ public class Book implements Serializable {
 		this.author = author;
 	}
 	
-	
+
 	public Publisher getPublisher() {
 		return publisher;
 	}
@@ -97,14 +96,22 @@ public class Book implements Serializable {
 	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
 	}
+	
+	
 
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
 
 	@Override
 	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", ISBN=" + ISBN + ", price=" + price + "]";
+		return "Book [id=" + id + ", title=" + title + ", ISBN=" + ISBN + ", price=" + price + ", image=" + image + "]";
 	}
-	
-	
-	
+
+		
 	
 }

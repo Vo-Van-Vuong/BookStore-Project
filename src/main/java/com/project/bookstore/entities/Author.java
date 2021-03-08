@@ -1,6 +1,5 @@
 package com.project.bookstore.entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,11 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 @Entity
 @Table(name = "author")
-public class Author implements Serializable {
+public class Author {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,13 +30,8 @@ public class Author implements Serializable {
 	
 	private String name_update;
 	
-	
-	
-	
 	@OneToMany(mappedBy = "author", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 	private List<Book> books;
-	
 	
 	public Author() {
 		
