@@ -10,11 +10,13 @@ import LoginPage from './pages/LoginPage';
 import AdminHome from './pages/admin/AdminHome';
 import BestSellProduct from './pages/BestSellProduct';
 import UploadPage from './pages/admin/UploadPage';
+import BasketPage from './pages/BasketPage';
 
 function App() {
   return (
   <Router>
     <Route path={["/", "/home"]} exact component={Home} />
+    <Route path="/basket" exact component={BasketPage} />
     <Route path="/product-page" exact component={BestSellProduct} />
     <Route path="/admin-home" exact component={AdminHome} />
     <Route path="/login" exact component={LoginPage} />

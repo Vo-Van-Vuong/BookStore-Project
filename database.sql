@@ -35,9 +35,10 @@ ALTER TABLE book
 ADD CONSTRAINT FK_PublisherBook
 FOREIGN KEY (publisher_id) REFERENCES publisher(id);
 
-
-
-select * from author;
-select * from book;
-select * from book where price < 500 
-order by id
+CREATE TABLE `bookstore`.`account` (
+  `idaccount` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(100) NULL,
+  `password` VARCHAR(100) NULL,
+  PRIMARY KEY (`idaccount`));
+  ALTER TABLE `bookstore`.`account` 
+ADD COLUMN `role` VARCHAR(10) NULL AFTER `password`;

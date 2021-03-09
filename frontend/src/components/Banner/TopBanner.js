@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
@@ -9,8 +9,6 @@ import Badge from "react-bootstrap/Badge";
 import "./TopBanner.css";
 
 export default class TopBanner extends Component {
-
-
   render() {
     return (
       <div className="top-banner">
@@ -37,28 +35,32 @@ export default class TopBanner extends Component {
         </DropdownButton>
 
         <Button className="my-button" variant="info">
-          <Link className="my-link" to='/product-page'>Sách bán chạy nhất</Link>
+          <Link className="my-link" to="/product-page">
+            Sách bán chạy nhất
+          </Link>
         </Button>
         <Button className="my-button" variant="info">
           Sách mới nhập
         </Button>
-        
+
         <Button className="my-button" variant="info">
           Danh sách tác giả
         </Button>
 
         <div className="my-cart">
-          
           <Button variant="danger">
-          <Badge className="mr-1" variant="light">
-            $ 9.000
-          </Badge> | 
-            <i
-              style={{ marginRight: "5px" }}
-              className="fa fa-shopping-cart ml-1"
-            ></i>
-            <Badge variant="light">9</Badge>
-            <span className="sr-only">number</span>
+            <Link className="my-link" to="/basket">
+              <Badge className="mr-1" variant="light">
+                $ 9.000
+              </Badge>{" "}
+              |
+              <i
+                style={{ marginRight: "5px" }}
+                className="fa fa-shopping-cart ml-1"
+              ></i>
+              <Badge variant="light">9</Badge>
+              <span className="sr-only">number</span>
+            </Link>
           </Button>
         </div>
       </div>

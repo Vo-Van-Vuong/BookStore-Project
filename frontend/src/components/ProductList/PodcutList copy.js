@@ -18,15 +18,15 @@ export default class PodcutList extends Component {
       items: 4,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1200 },
       items: 4,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 1020 },
+      breakpoint: { max: 1200, min: 1022 },
       items: 3,
     },
     mobile: {
-      breakpoint: { max: 1020, min: 0 },
+      breakpoint: { max: 1022, min: 0 },
       items: 2,
     },
   };
