@@ -11,6 +11,7 @@ import AdminHome from './pages/admin/AdminHome';
 import BestSellProduct from './pages/BestSellProduct';
 import UploadPage from './pages/admin/UploadPage';
 import BasketPage from './pages/BasketPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Route path={["/", "/home"]} exact component={Home} />
     <Route path="/basket" exact component={BasketPage} />
     <Route path="/product-page" exact component={BestSellProduct} />
+    <Route path="/product/id" exact component={ProductDetailPage} />
     <Route path="/admin-home" exact component={AdminHome} />
     <Route path="/login" exact component={LoginPage} />
     <Route path="/upload" exact component={UploadPage} />

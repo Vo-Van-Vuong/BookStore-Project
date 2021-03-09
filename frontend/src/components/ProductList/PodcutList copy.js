@@ -9,6 +9,7 @@ import "react-multi-carousel/lib/styles.css";
 import "./ProductList.css";
 
 import ProductApi from "../../API/ProductApi";
+import { Link } from "react-router-dom";
 
 export default class PodcutList extends Component {
   responsive = {
@@ -61,6 +62,7 @@ export default class PodcutList extends Component {
               responsive={this.responsive}
             >
               {this.state.books.map((book) => (
+                <Link className="my-link" to="/product/id">
                 <Card key={book.id} className="product-card1">
                   <Card.Img
                     className="card-img1"
@@ -97,6 +99,7 @@ export default class PodcutList extends Component {
                     </Card.Text>
                   </Card.Body>
                 </Card>
+                </Link>
               ))}
             </Carousel>
           </Card.Body>

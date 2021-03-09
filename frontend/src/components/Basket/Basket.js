@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import "./Basket.css";
-import { Button } from "react-bootstrap";
+import { Badge, Button } from "react-bootstrap";
 
 export default class Basket extends Component {
   render() {
@@ -22,14 +22,18 @@ export default class Basket extends Component {
           </Card.Header>
 
           <Card.Body>
-
             <Card.Subtitle style={{ fontSize: "18px", marginBottom: "15px" }}>
               <i className="fa fa-info-circle mr-2"></i>
-              Bạn có <p style={{display:"inline", color:"#007ACC"}}>2</p> sản phẩm trong giỏ hàng. Tổng trị giá là <p style={{display:"inline", color:"#007ACC"}}>305.000 VNĐ</p>.
+              Bạn có <p style={{ display: "inline", color: "#007ACC" }}>
+                2
+              </p>{" "}
+              sản phẩm trong giỏ hàng. Tổng trị giá là{" "}
+              <p style={{ display: "inline", color: "#007ACC" }}>305.000 VNĐ</p>
+              .
             </Card.Subtitle>
             <hr></hr>
 
-            <Card style={{marginBottom:"10px"}}>
+            <Card style={{ marginBottom: "10px" }}>
               <Card.Body>
                 <div className="row">
                   <div className="col-md-2">
@@ -52,22 +56,20 @@ export default class Basket extends Component {
                       100.000 VNĐ
                     </h5>
                   </div>
+                  {/* Add and remove*/}
                   <div className="col-md-2">
-                    <Form style={{ marginTop: "30px" }}>
-                      <Form.Group as={Row} controlId="formPlaintextPassword">
-                        <Form.Label column sm="6">
-                          Số lượng
-                        </Form.Label>
-                        <Col sm="6">
-                          <Form.Control
-                            type="number"
-                            min="1"
-                            max="999"
-                            defaultValue="1"
-                          />
-                        </Col>
-                      </Form.Group>
-                    </Form>
+                    <div className="row">
+                      <div className="col-md-4">
+                        <Button style={{width:"40px", marginTop:"10px", fontWeight:"bold"}} variant="secondary"> - </Button>
+                      </div>
+                      <div className="col-md-4">
+                        <h1><Badge variant="primary">1</Badge></h1>
+                      </div>
+                      <div className="col-md-4">
+                        <Button style={{width:"40px", marginTop:"10px", fontWeight:"bold"}} variant="secondary"> + </Button>
+                      </div>
+                    </div>
+
                     <Button
                       style={{
                         float: "right",
@@ -83,7 +85,7 @@ export default class Basket extends Component {
               </Card.Body>
             </Card>
 
-            <Card style={{marginBottom:"10px"}}>
+            <Card style={{ marginBottom: "10px" }}>
               <Card.Body>
                 <div className="row">
                   <div className="col-md-2">
@@ -136,15 +138,22 @@ export default class Basket extends Component {
                 </div>
               </Card.Body>
             </Card>
-            
 
-            <Button style={{width:"192px", float:"right"}} variant="primary"> Thanh toán </Button>
-            <Button style={{width:"192px", float:"right", marginRight:"10px"}} variant="secondary"> Tiếp tục mua sắm </Button>
-            
-        
-
+            <Button
+              style={{ width: "192px", float: "right" }}
+              variant="primary"
+            >
+              {" "}
+              Thanh toán{" "}
+            </Button>
+            <Button
+              style={{ width: "192px", float: "right", marginRight: "10px" }}
+              variant="secondary"
+            >
+              {" "}
+              Tiếp tục mua sắm{" "}
+            </Button>
           </Card.Body>
-          
         </Card>
       </div>
     );
