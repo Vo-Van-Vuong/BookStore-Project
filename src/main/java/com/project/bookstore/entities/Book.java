@@ -15,7 +15,7 @@ public class Book {
 
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
-	private int id;
+	private Long id;
 	
 	private String title;
 	
@@ -25,7 +25,17 @@ public class Book {
 	
 	private String image;
 	
+	private int rating;
 	
+	
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+
 	@ManyToOne(cascade = {CascadeType.DETACH ,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JoinColumn(name="author_id")
 	private Author author;
@@ -47,11 +57,11 @@ public class Book {
 	public Book() {
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

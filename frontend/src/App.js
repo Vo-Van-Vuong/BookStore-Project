@@ -9,6 +9,7 @@ import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import AdminHome from './pages/admin/AdminHome';
 import BestSellProduct from './pages/BestSellProduct';
+import UploadPage from './pages/admin/UploadPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Route path="/product-page" exact component={BestSellProduct} />
     <Route path="/admin-home" exact component={AdminHome} />
     <Route path="/login" exact component={LoginPage} />
+    <Route path="/upload" exact component={UploadPage} />
   </Router>
 
   );

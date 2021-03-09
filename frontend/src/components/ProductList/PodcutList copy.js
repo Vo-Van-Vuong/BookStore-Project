@@ -7,10 +7,6 @@ import Button from "react-bootstrap/Button";
 
 import "react-multi-carousel/lib/styles.css";
 import "./ProductList.css";
-import Book from "../../public/images/products/october-2020-books-leave-the-world-behind.jpg";
-import Book1 from "../../public/images/products/book-of-knowledge.jpg";
-import Book2 from "../../public/images/products/Joy_of_Intimacy.jpg";
-import Book3 from "../../public/images/products/201912-the-return-thumbnail.png";
 
 import ProductApi from "../../API/ProductApi";
 
@@ -44,8 +40,8 @@ export default class PodcutList extends Component {
 
   componentDidMount() {
     ProductApi.getBooks().then((response) => {
-      console.log(response.data);
       this.setState({ books: response.data });
+      
     });
   }
 
@@ -65,11 +61,11 @@ export default class PodcutList extends Component {
               responsive={this.responsive}
             >
               {this.state.books.map((book) => (
-                <Card key={book.idbook} className="product-card1">
+                <Card key={book.id} className="product-card1">
                   <Card.Img
                     className="card-img1"
                     variant="top"
-                    src={`/uploads/${book.image}`}
+                    src={book.image}
                   />
                   <Card.Body>
                     <Card.Title style={{ height: "50px" }}>
@@ -77,7 +73,7 @@ export default class PodcutList extends Component {
                     </Card.Title>
 
                     <Card.Subtitle className="mb-2">
-                      {book.author}
+                      {book.author.name}
                     </Card.Subtitle>
                     <Card.Text>
                       <StarRatings
@@ -119,7 +115,7 @@ export default class PodcutList extends Component {
               responsive={this.responsive}
             >
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/201912-the-return-thumbnail.png" />
                 <Card.Body>
                   <Card.Title>Leave the world behind</Card.Title>
                   <Card.Text>
@@ -130,7 +126,7 @@ export default class PodcutList extends Component {
               </Card>
 
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/Joy_of_Intimacy.jpg" />
                 <Card.Body>
                   <Card.Title>Leave the world behind</Card.Title>
                   <Card.Text>
@@ -141,7 +137,7 @@ export default class PodcutList extends Component {
               </Card>
 
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title>Leave the world behind</Card.Title>
                   <Card.Text>
@@ -152,7 +148,7 @@ export default class PodcutList extends Component {
               </Card>
 
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book1} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/book-of-knowledge.jpg" />
                 <Card.Body>
                   <Card.Title>The Book of knowledge</Card.Title>
                   <Card.Text>
@@ -163,7 +159,7 @@ export default class PodcutList extends Component {
               </Card>
 
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book2} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/Joy_of_Intimacy.jpg" />
                 <Card.Body>
                   <Card.Title>The JOY of Intimacy</Card.Title>
                   <Card.Text>
@@ -174,7 +170,7 @@ export default class PodcutList extends Component {
               </Card>
 
               <Card className="product-card1">
-                <Card.Img className="card-img1" variant="top" src={Book3} />
+                <Card.Img className="card-img1" variant="top" src="/images/products/201912-the-return-thumbnail.png" />
                 <Card.Body>
                   <Card.Title>The Return</Card.Title>
                   <Card.Text>

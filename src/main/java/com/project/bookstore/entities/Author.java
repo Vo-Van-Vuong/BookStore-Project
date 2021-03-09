@@ -30,8 +30,11 @@ public class Author {
 	
 	private String name_update;
 	
-	@OneToMany(mappedBy = "author", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	private List<Book> books;
+	/*
+	 * @OneToMany(mappedBy = "author", cascade =
+	 * {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH
+	 * }) private List<Book> books;
+	 */
 	
 	public Author() {
 		
@@ -99,14 +102,12 @@ public class Author {
 				+ ", date_add=" + date_add + ", name_update=" + name_update + "]";
 	}
 	
-	public void addBook(Book theBook) {
-		if(books == null) {
-			books = new ArrayList<Book>();
-		}
-		books.add(theBook);
-		
-		theBook.setAuthor(this);
-	}
+	/*
+	 * public void addBook(Book theBook) { if(books == null) { books = new
+	 * ArrayList<Book>(); } books.add(theBook);
+	 * 
+	 * theBook.setAuthor(this); }
+	 */
 	
 	
 }

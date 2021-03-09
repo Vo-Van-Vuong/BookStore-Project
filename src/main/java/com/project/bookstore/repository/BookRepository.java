@@ -8,8 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.project.bookstore.entities.Book;
 
-public interface BookRepository extends JpaRepository<Book, Integer> {
-	
+public interface BookRepository extends JpaRepository<Book, Long> {
 	
 	@Query("from Book")
 	List<Book> findAllBook();

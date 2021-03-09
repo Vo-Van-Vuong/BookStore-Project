@@ -5,10 +5,6 @@ import Button from "react-bootstrap/Button";
 import Pagination from "react-bootstrap/Pagination";
 import Badge from "react-bootstrap/Badge";
 
-import Book from "../../public/images/products/october-2020-books-leave-the-world-behind.jpg";
-import Book1 from "../../public/images/products/book-of-knowledge.jpg";
-import Book2 from "../../public/images/products/Joy_of_Intimacy.jpg";
-import Book3 from "../../public/images/products/201912-the-return-thumbnail.png";
 
 import "./ProductGrid.css";
 export default class ProdcutGrid extends Component {
@@ -22,7 +18,7 @@ export default class ProdcutGrid extends Component {
           <Card.Body>
             <Card.Text>
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -36,7 +32,7 @@ export default class ProdcutGrid extends Component {
               </Card>
 
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -49,7 +45,7 @@ export default class ProdcutGrid extends Component {
                 </Card.Body>
               </Card>
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -62,21 +58,7 @@ export default class ProdcutGrid extends Component {
                 </Card.Body>
               </Card>
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
-                <Card.Body>
-                  <Card.Title style={{ fontSize: "15px" }}>
-                    Leave the world behind
-                    <p style={{ fontWeight: 100 }}>Rumaan Alam </p>
-                  </Card.Title>
-                  <Card.Text style={{ fontSize: "14px" }}>$100.99</Card.Text>
-                  <Button style={{ margin: "auto" }} variant="outline-danger">
-                    Thêm vào giỏ
-                  </Button>
-                </Card.Body>
-              </Card>
-
-              <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -90,7 +72,21 @@ export default class ProdcutGrid extends Component {
               </Card>
 
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
+                <Card.Body>
+                  <Card.Title style={{ fontSize: "15px" }}>
+                    Leave the world behind
+                    <p style={{ fontWeight: 100 }}>Rumaan Alam </p>
+                  </Card.Title>
+                  <Card.Text style={{ fontSize: "14px" }}>$100.99</Card.Text>
+                  <Button style={{ margin: "auto" }} variant="outline-danger">
+                    Thêm vào giỏ
+                  </Button>
+                </Card.Body>
+              </Card>
+
+              <Card className="product-card">
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -103,7 +99,7 @@ export default class ProdcutGrid extends Component {
                 </Card.Body>
               </Card>
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind
@@ -116,7 +112,7 @@ export default class ProdcutGrid extends Component {
                 </Card.Body>
               </Card>
               <Card className="product-card">
-                <Card.Img className="card-img" variant="top" src={Book} />
+                <Card.Img className="card-img" variant="top" src="/images/products/october-2020-books-leave-the-world-behind.jpg" />
                 <Card.Body>
                   <Card.Title style={{ fontSize: "15px" }}>
                     Leave the world behind

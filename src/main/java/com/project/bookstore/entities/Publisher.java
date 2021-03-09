@@ -25,8 +25,11 @@ public class Publisher {
 	
 	private String phone;
 	
-	@OneToMany(mappedBy = "publisher",cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
-	private List<Book> books;
+	/*
+	 * @OneToMany(mappedBy = "publisher",cascade =
+	 * {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH
+	 * }) private List<Book> books;
+	 */
 
 	public Publisher(String name, String address, String phone) {
 		this.name = name;
@@ -69,13 +72,11 @@ public class Publisher {
 		this.phone = phone;
 	}
 
-	public List<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
+	/*
+	 * public List<Book> getBooks() { return books; }
+	 * 
+	 * public void setBooks(List<Book> books) { this.books = books; }
+	 */
 	
 	
 
@@ -84,14 +85,12 @@ public class Publisher {
 		return "Publisher [id=" + id + ", name=" + name + ", address=" + address + ", phone=" + phone + "]";
 	}
 	
-	public void addBook(Book theBook) {
-		if(books == null) {
-			books = new ArrayList<Book>();
-		}
-		books.add(theBook);
-		theBook.setPublisher(this);
-		
-	}
+	/*
+	 * public void addBook(Book theBook) { if(books == null) { books = new
+	 * ArrayList<Book>(); } books.add(theBook); theBook.setPublisher(this);
+	 * 
+	 * }
+	 */
 	
 	
 }

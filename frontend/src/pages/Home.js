@@ -11,7 +11,7 @@ import Banner from "../components/Banner/Banner";
 import TopBanner from "../components/Banner/TopBanner";
 import CategoryCard from "../components/CategoryCard/CategoryCard";
 
-import Letter from '../public/images/newsletter-icon.svg'
+
 import "../App.css";
 
 export default class Home extends Component {
@@ -31,7 +31,7 @@ export default class Home extends Component {
               <Form method="post">
                 <Form.Row>
                   <Col md={1}>
-                    <img src={Letter} />
+                    <img src="/images/newsletter-icon.svg" />
                   </Col>
                   <Col md={3}>
                     <h6>Hãy để lại góp ý cho chúng tôi. Những góp ý của các bạn sẽ góp phần nâng cao chất lượng phục vụ của chúng tôi.</h6>
