@@ -21,17 +21,17 @@ class UploadFile extends Component {
 
     // Update the formData object
     formData.append(
-      "myFile",
-      this.state.selectedFile,
-      this.state.selectedFile.name
+      "file",
+      this.state.selectedFile
     );
 
     // Details of the uploaded file
     console.log(this.state.selectedFile);
-
+    alert("upload!")
     // Request made to the backend api
     // Send formData object
-    axios.post("api/uploadfile", formData);
+    axios.post("http://localhost:8080/api/upload", formData);
+    
   };
 
   // File content to be displayed after
