@@ -9,6 +9,7 @@ import "react-multi-carousel/lib/styles.css";
 import "./ProductList.css";
 
 import ProductApi from "../../API/ProductApi";
+
 import { Link } from "react-router-dom";
 
 export default class PodcutList extends Component {
@@ -67,7 +68,7 @@ export default class PodcutList extends Component {
                   <Card.Img
                     className="card-img1"
                     variant="top"
-                    src={book.image}
+                    src={"data:image/jpeg;base64," + book.image}
                   />
                   <Card.Body>
                     <Card.Title style={{ height: "50px" }}>

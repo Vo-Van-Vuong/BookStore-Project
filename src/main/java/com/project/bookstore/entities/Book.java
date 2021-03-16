@@ -47,11 +47,11 @@ public class Book {
 	
 		
 
-	public Book(String title, String iSBN, int price, String image) {
+	public Book(String title, int price, int rating, String image) {
 		this.title = title;
-		ISBN = iSBN;
 		this.price = price;
 		this.image = image;
+		this.rating = rating;
 	}
 
 	public Book() {

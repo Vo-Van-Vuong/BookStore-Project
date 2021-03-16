@@ -9,9 +9,11 @@ public interface BookService {
 
 	public void deleteBookById(long id);
 
-	public void addOrUpdateBook(Book book);
+	public Book addOrUpdateBook(Book book);
 
-	public Book findBookById(long id);
+	public Book findBookById(Long id);
+
+	
 	
 
 }

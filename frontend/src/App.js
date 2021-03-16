@@ -13,6 +13,7 @@ import UploadPage from './pages/admin/UploadPage';
 import BasketPage from './pages/BasketPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import FormikTest from './pages/FormikTest';
+import ByteArrayImage from './pages/admin/ByteArrayImage';
 
 function App() {
   return (
@@ -21,10 +22,10 @@ function App() {
     <Route path="/basket" exact component={BasketPage} />
     <Route path="/product-page" exact component={BestSellProduct} />
     <Route path="/product/id" exact component={ProductDetailPage} />
-    <Route path="/admin-home" exact component={UploadPage} />
+    <Route path="/admin-home" exact component={AdminHome} />
     <Route path="/login" exact component={LoginPage} />
-    <Route path="/upload" exact component={UploadPage} />
     <Route path="/formik" component={FormikTest} />
+    <Route path="/showimage" component={ByteArrayImage} />
   </Router>
 
   );

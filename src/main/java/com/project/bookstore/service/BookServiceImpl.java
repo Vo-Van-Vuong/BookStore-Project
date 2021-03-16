@@ -32,17 +32,14 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	@Transactional
-	public void addOrUpdateBook(Book book) {
-		bookRepository.save(book);
-
+	public Book addOrUpdateBook(Book book) {
+		return bookRepository.save(book);
 	}
 
 	@Override
 	@Transactional
-	public Book findBookById(long id) {
-		Optional<Book> temp = bookRepository.findById(id);
-		Book book = temp.get();
-		return book;
+	public Book findBookById(Long id) {
+		return bookRepository.getOne(id);
 	}
 
 
