@@ -42,8 +42,8 @@ export default class PodcutList extends Component {
 
   componentDidMount() {
     ProductApi.getBooks().then((response) => {
+      console.log(response.data)
       this.setState({ books: response.data });
-      
     });
   }
 
@@ -63,7 +63,7 @@ export default class PodcutList extends Component {
               responsive={this.responsive}
             >
               {this.state.books.map((book) => (
-                <Link className="my-link" to="/product/id">
+                <Link params={{ id: book.id }} className="my-link" to="/product/id">
                 <Card key={book.id} className="product-card1">
                   <Card.Img
                     className="card-img1"
@@ -76,7 +76,7 @@ export default class PodcutList extends Component {
                     </Card.Title>
 
                     <Card.Subtitle className="mb-2">
-                      {book.author.name}
+                      {book.author}
                     </Card.Subtitle>
                     <Card.Text>
                       <StarRatings

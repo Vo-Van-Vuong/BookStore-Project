@@ -4,9 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.Base64;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,37 +45,23 @@ public class BookRestController {
 	
 	@GetMapping("/allbooks")
 	public List<Book> getBooks() throws IOException {
-		List<Book> books = bookService.showAllBook();
-			for(Book aBook : books) {
-				String imagesPath = "static/user-photos/" 
-									+ ((Long)aBook.getId()).toString()
-									+"/" + aBook.getImage();
-				File file = new ClassPathResource(imagesPath).getFile();
-				String encodeImage = Base64.getEncoder().withoutPadding().encodeToString(Files.readAllBytes(file.toPath()));
-				
-				aBook.setImage(encodeImage);
-			}
-		
-		return books;
+		return bookService.showAllBook();
 	}
 
 
 	@PostMapping("/addnewbook")
 	public Book addNewBook(
 			@RequestParam("title") String title, 
+			@RequestParam("author") String author,
 			@RequestParam("price") int price,
 			@RequestParam("rating") int rating,
 			@RequestParam("image") MultipartFile file) 
 		throws IOException{
 		
-		String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-		Book book = new Book(title, price, rating, fileName);
-		Book savedBook = bookService.addOrUpdateBook(book);
-		Long idBook = savedBook.getId();
-		
-		String uploadDir = "src/main/resources/static/user-photos/" + idBook.toString();
-		FileUploadUtil.saveFile(uploadDir, fileName, file);
-		return book;
+
+		Book book = new Book(title, author, price, rating, file.getBytes());
+		return bookService.addOrUpdateBook(book);
+		 
 	}
 
 	@PutMapping("/books")
@@ -96,10 +80,5 @@ public class BookRestController {
 	  public void deleteBookById(@PathVariable Long bookId) { 
 		  bookRep.deleteById(bookId);
 	  }
-	 
-	
-	/*
-	 * @GetMapping("/formik/{idformik}") public
-	 */
 	
 }

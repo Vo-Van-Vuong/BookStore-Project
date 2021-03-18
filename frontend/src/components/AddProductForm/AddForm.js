@@ -10,21 +10,29 @@ export default class AddForm extends Component {
       <Formik
         initialValues={{
           title: "",
+          author: "",
           price: "",
           rating: 0,
-        
+
           file: null,
         }}
         onSubmit={(values) => {
-
           const formData = new FormData();
 
-          formData.append("title",values.title);
+          formData.append("title", values.title);
+          formData.append("author", values.author);
           formData.append("rating", values.rating);
           formData.append("price", values.price);
           formData.append("image", values.file);
 
-          BookApi.saveBook(formData)
+          try{
+            BookApi.saveBook(formData);
+          }catch(err){
+            alert("error!!!")
+          }
+        
+          
+          
         }}
       >
         {(formik) => (
@@ -37,6 +45,12 @@ export default class AddForm extends Component {
               placeholder="Enter title here ..."
             />
 
+            <FastField
+              name="author"
+              component={TextFields}
+              label="Author: "
+              placeholder="Enter author here ..."
+            />
 
             <FastField
               name="price"
@@ -59,10 +73,7 @@ export default class AddForm extends Component {
                 name="file"
                 type="file"
                 onChange={(event) => {
-                  formik.setFieldValue(
-                    "file",
-                    event.currentTarget.files[0]
-                  );
+                  formik.setFieldValue("file", event.currentTarget.files[0]);
                 }}
               />
             </FormB.Group>

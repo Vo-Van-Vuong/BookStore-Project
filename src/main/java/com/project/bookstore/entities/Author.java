@@ -30,11 +30,11 @@ public class Author {
 	
 	private String name_update;
 	
-	/*
-	 * @OneToMany(mappedBy = "author", cascade =
-	 * {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH
-	 * }) private List<Book> books;
-	 */
+	
+	  @OneToMany(mappedBy = "author", cascade =
+	  {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH
+	  }) private List<Book> books;
+	 
 	
 	public Author() {
 		

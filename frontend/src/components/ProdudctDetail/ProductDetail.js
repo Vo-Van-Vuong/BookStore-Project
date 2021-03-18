@@ -3,8 +3,25 @@ import { Button } from "react-bootstrap";
 
 import Card from "react-bootstrap/Card";
 import StarRatings from "react-star-ratings";
+import ProductApi from "../../API/ProductApi";
 
 export default class ProductDetail extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: "",
+      idbook: 30
+    };
+  }
+
+  componentDidMount() {
+    ProductApi.getABook(this.state.idbook).then((response) => {
+      this.setState({ books: response.data });
+      
+    });
+  }
+
   render() {
     return (
       <div>
@@ -15,17 +32,17 @@ export default class ProductDetail extends Component {
                 <div className="row">
                   <div className="col-md-5">
                     <img
-                      style={{ width: "100%" }}
-                      src="/images/products/201912-the-return-thumbnail.png"
+                      style={{ width: "100%", borderRadius:"8px" }}
+                      src={"data:image/jpeg;base64," + this.state.books.image}
                     />
                   </div>
                   <div className="col-md-7">
-                    <h3 style={{ color: "#212529" }}>The Return</h3>
-                    <h6>Tác giả: Nicholas Sparks</h6>
+                    <h3 style={{ color: "#212529" }}>{this.state.books.title}</h3>
+                    <h6>Tác giả: {this.state.books.author}</h6>
                     <hr></hr>
-                    <h6>Đánh giá: 2/5</h6>
+                    <h6>Đánh giá: {this.state.books.rating}/5</h6>
                     <StarRatings
-                      rating={2}
+                      rating={this.state.books.rating}
                       starDimension="20px"
                       starSpacing="1px"
                       starRatedColor="#FED221"
